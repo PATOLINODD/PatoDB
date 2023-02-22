@@ -5,12 +5,13 @@
  */
 package com.pato;
 
+import com.pato.enuns.Ignore;
 import com.pato.models.Cliente;
-import com.pato.models.SelectClientes;
-import com.pato.models.Telefone;
+import com.pato.models.Termo;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,29 +22,27 @@ import java.util.logging.Logger;
 public class Main {
     
     public Main(){
-        try(Connection conn = new Conexao().getConn()){
-            Consulta query = new Consulta(conn);
+//        try(Connection conn = new Conexao().getConn()){
+//            Consulta query = new Consulta(conn);
+            Consulta query = new Consulta();
             
             Cliente patrick = new Cliente();
             
             patrick.setId(2);
-            patrick.setNome("BARBARA B OLIVEIRA");
+            patrick.setNome("'BARBARA' B OLIVEIRA");
+            Termo termo = new Termo();
             
-            Telefone telefone = new Telefone();
-//            telefone.setId_cliente((int) patrick.getId());
-//            telefone.setTelefone("+5511912346547");
-//            System.out.println(query.insertInto(patrick));
-//            System.out.println(query.insertInto(telefone));
+            termo.setCliente(patrick);
+            termo.setDataHoje(LocalDateTime.now());
+            termo.setFielIgnorado("ignorado!");//just to show that attribute's name and value exist.
+            termo.setInteiro(45);
             
-
-            SelectClientes CLIENTE = new SelectClientes();
-            List<Object> resultList = query.select(CLIENTE).getResultList();
+            query.insertInto(termo);
             
-            resultList.forEach(System.out::println);
             
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
     public static void main(String[] args){
         new Main();

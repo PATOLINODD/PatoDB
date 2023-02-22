@@ -25,16 +25,16 @@ public class Cliente {
     @Coluna(nome = "NOME", nulo = false, tamanho = 50)
     private String nome;
     
-    @Juntar(chavePrimaria = "ID", chaveEstrangeira = "ID_CLNT")
-    Telefone telefones;
-
-    public Telefone getTelefones() {
-        return telefones;
-    }
-
-    public void setTelefones(Telefone telefones) {
-        this.telefones = telefones;
-    }
+//    @Juntar(chavePrimaria = "ID", chaveEstrangeira = "ID_CLNT")
+//    Telefone telefones;
+//
+//    public Telefone getTelefones() {
+//        return telefones;
+//    }
+//
+//    public void setTelefones(Telefone telefones) {
+//        this.telefones = telefones;
+//    }
 
     public long getId() {
         return id;

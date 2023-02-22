@@ -5,6 +5,7 @@
  */
 package com.pato;
 
+import com.pato.enuns.Ignore;
 import com.pato.queries.CreateDelete;
 import com.pato.queries.CreateInsertInto;
 import java.sql.Connection;
@@ -31,19 +32,13 @@ public class Consulta {
     private Object obj;
     private List<Object> objs = new ArrayList<>();
     
-//    public Consulta(Connection conn, Object table){
-//        this.table = table.getClass();
-//        this.conn = conn;
-//    }
-    
     public Consulta(Connection connection){
         log.log(Level.INFO, "Iniciando conexão com a base de dados");
         this.conn = connection;
     }
 
-//    public Create create(Object obj){
-//        return new Create(obj, this.conn);
-//    }
+    public Consulta() {
+    }
     
     public CreateSelect select(Object obj){
         try {

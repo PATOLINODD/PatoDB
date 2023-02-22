@@ -5,6 +5,7 @@
  */
 package com.pato.queries;
 
+import com.pato.enuns.Ignore;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;

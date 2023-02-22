@@ -5,6 +5,8 @@
  */
 package com.pato.Utils;
 
+import com.mchange.v2.lang.StringUtils;
+
 /**
  *
  * @author PATOLINODD
@@ -15,16 +17,13 @@ public class NovaString {
         query.replace(query.lastIndexOf(str), query.lastIndexOf(str)+str.length(), "");
     }
     public static String getNome(String field){
-        String result = "";
-        String []str = field.split("");
-        for(int i = 0; i< str.length; i++){
-            if(i == 0){
-                result += str[i].toUpperCase();
-            }else{
-                result += str[i];
-            }
-        }
-        return result;
+        String firstLetter = String.valueOf(field.charAt(0));
+        field = field.replaceFirst(firstLetter, firstLetter.toUpperCase());
+        return field;
+    }
+    
+    public static String limpaAspasSimples(String str){
+        return str.replaceAll("'", "");
     }
     
 }
