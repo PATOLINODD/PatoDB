@@ -5,17 +5,18 @@
  */
 package com.pato.models;
 
+import com.google.gson.Gson;
 import com.pato.anotacoes.query.ChavePrimaria;
 import com.pato.anotacoes.query.Coluna;
-import com.pato.anotacoes.query.Juntar;
 import com.pato.anotacoes.query.Tabela;
+import com.pato.enuns.Gerar;
 import com.pato.enuns.TipoDeDado;
 
 /**
  *
  * @author PATOLINODD
  */
-@Tabela(value = "Clientes")
+@Tabela("CLIENTES")
 public class Cliente {
     
     @Coluna(nome = "ID", nulo = false, tipoDado = TipoDeDado.NUMBER)
@@ -54,7 +55,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "id=" + id + ", nome=" + nome + '}';
+        return new Gson().toJson(this);
     }
 
 

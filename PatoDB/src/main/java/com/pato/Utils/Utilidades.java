@@ -56,7 +56,6 @@ public class Utilidades {
      * @param table
      * @param field
      * @param obj
-     * @return Object value of field in java class
      */
     public static void getValuesFields(StringBuilder query, Class<?> table, Field field, Object obj) {
         log.log(Level.INFO, "Entering in method getValuesFields(Class<?> table: {0}, Field field: {1}, Object obj: {2})", new Object[]{table, field, obj});
@@ -84,16 +83,16 @@ public class Utilidades {
                 query.append("'").append(NovaString.limpaAspasSimples(String.valueOf(obj))).append("'").append(", ");
                 break;
             case "char":
-                query.append(obj).append(", ");
+                query.append("'").append(obj).append("'").append(", ");
                 break;
             case "localdate":
-                query.append("TO_DATE('").append(obj).append("'), ");
+                query.append("TO_CHAR('").append(obj).append("'), ");
                 break;
             case "localdatetime":
                 query.append("TO_CHAR('").append(obj).append("'), ");
                 break;
             case "date":
-                query.append("TO_DATE('").append(obj).append("'), ");
+                query.append("TO_CHAR('").append(obj).append("'), ");
                 break;
             case "datetime":
                 query.append("TO_CHAR('").append(obj).append("'), ");

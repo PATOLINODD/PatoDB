@@ -5,11 +5,11 @@
  */
 package com.pato.models;
 
+import com.google.gson.Gson;
 import com.pato.anotacoes.query.ClassColunas;
 import com.pato.anotacoes.query.Coluna;
 import com.pato.anotacoes.query.Tabela;
 import com.pato.anotacoes.util.Ignore;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
@@ -66,7 +66,7 @@ public class Termo {
 
     @Override
     public String toString() {
-        return "Termo{" + "cliente=" + cliente + '}';
+        return new Gson().toJson(this);
     }
 
 }

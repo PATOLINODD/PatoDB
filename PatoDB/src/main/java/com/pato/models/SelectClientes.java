@@ -5,11 +5,11 @@
  */
 package com.pato.models;
 
+import com.google.gson.Gson;
 import com.pato.anotacoes.query.Coluna;
 import com.pato.anotacoes.query.Juntar;
 import com.pato.anotacoes.query.Tabela;
 import com.pato.anotacoes.funcao.CEIL;
-import com.pato.anotacoes.query.Onde;
 
 /**
  *
@@ -43,7 +43,7 @@ public class SelectClientes {
 
     @Override
     public String toString() {
-        return "SelectClientes{" + "nome=" + nome + ", telefone=" + telefone + '}';
+        return new Gson().toJson(this);
     }
     
 }

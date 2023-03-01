@@ -18,7 +18,7 @@ public class Conexao {
     Connection conn;
     public Conexao() throws SQLException {
         ComboPooledDataSource combop = new ComboPooledDataSource();
-        combop.setJdbcUrl("jdbc:oracle:thin:rcvry/rcvrywillbank@172.31.20.116:1521/odvsafra");
+        combop.setJdbcUrl("jdbc:oracle:thin:rcvry/rcvrysafra@172.31.20.116:1521/odvsafra");
         
         this.conn = combop.getConnection();
     }

@@ -1,0 +1,7 @@
+#surefire
+#Wed Mar 01 11:45:50 BRT 2023
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.2 RC\\java\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\PROJETO_LIB\\PatoDB
+file.encoding=UTF-8
+localRepository=C\:\\Users\\patrick.oliveira\\.m2\\repository
+basedir=C\:\\PROJETO_LIB\\PatoDB

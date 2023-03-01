@@ -5,14 +5,13 @@
  */
 package com.pato.models;
 
-import com.pato.anotacoes.query.Selecionar;
+import com.google.gson.Gson;
 import com.pato.anotacoes.query.Tabela;
 
 /**
  *
  * @author PATRICK
  */
-@Selecionar
 public class ClientesETelefones {
     
     @Tabela
@@ -39,6 +38,6 @@ public class ClientesETelefones {
 
     @Override
     public String toString() {
-        return "ClientesETelefones{" + "clientes=" + clientes + ", telfones=" + telfones + '}';
+        return new Gson().toJson(this);
     }
 }
